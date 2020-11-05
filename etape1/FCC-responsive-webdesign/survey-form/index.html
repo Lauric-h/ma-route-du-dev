@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/4c8d4845c9.js" crossorigin="anonymous"></script>
+        <title>Survey Form</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    </head>
+    <body>
+   
+    <main>
+        <header>
+            <h1 id="title">What type of runner are you?</h1>
+                <p id="description">Mountain goat or city racer?</p>
+        </header>
+        <form id="survey-form" action="#" method="POST">
+           <div class="input-form">   
+                <label id="name-label" for="name">Your name</label>
+                <input type="text" id="name" name="username" placeholder="Kilian Jornet" class="inputbox" required>
+            </div>  
+            <div class="input-form">   
+                <label id="email-label" for="email">Your email</label>
+                <input type="email" id="email" name="email_adress" placeholder="k.jornet@email.com" class="inputbox" required>
+            </div>
+            <div class="input-form">   
+                <label id="age-label" for="number">Your age</label>
+                <input type="number" id="number" name="age" min="15" max="99" placeholder="Age" class="inputbox">
+            </div>
+            <div class="input-form">   
+                <label id="dropdown-label" for="dropdown">How long have you been running?</label>
+                <select id="dropdown" class="inputbox">
+                    <option disabled selected value>Select below</option>
+                    <option value="oneyear">Less than one year</option>
+                    <option value="fouryears">Between two and four years</option>
+                    <option value="nineyears">Between four and nine years</option>
+                    <option value="tenyears">More than 10 years</option>
+                </select>
+            </div>
+            <div>   
+                <fieldset>
+                    <legend>How often do your run?</legend>
+                    <p><label for="three"><input type="radio" id="three" name="frequency" class="radiobtn">Less than three times a week</label></p>
+                    <p><label for="five"><input type="radio" id="five" name="frequency" class="radiobtn">Between three and five times a week</label></p>
+                    <p><label for="more"><input type="radio" id="more" name="frequency" class="radiobtn">More than five times a week</label></p>
+                </fieldset>
+            </div>
+            <div>   
+                <fieldset>
+                    <legend>Where do you run? (select all that apply)</legend>
+                    <p><label for="city"><input type="checkbox" id="city" name="place" class="checkboxes">In the city</label></p>
+                    <p><label for="mountains"><input type="checkbox" id="mountains" name="place" class="checkboxes">In the mountains</label></p>
+                    <p><label for="woods"><input type="checkbox" id="woods" name="place" class="checkboxes">In the woods</label></p>
+                    <p><label for="countryside"><input type="checkbox" id="countryside" name="place" class="checkboxes">In the countryside</label></p>
+                </fieldset>
+            </div>
+            <div class="input-form">
+                <label id="textarea-label" for="textarea">More about your practice? (optional)</label>
+                <textarea type="textarea" id="textarea" name="textarea" placeholder="Additional comment"></textarea>
+            </div>
+            <div class="inputbtn">
+                <button type="submit" id="submit">Send form</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Made with <a href="https://thetrailwalker.fr" target="_blank"><i class="fas fa-basketball-ball"></i></a> by Lauric</p>
+    </footer>
+    </body>
+</html>
