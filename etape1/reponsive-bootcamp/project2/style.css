@@ -1,0 +1,184 @@
+/*  font-family: 'Source Sans Pro', sans-serif;  */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #404040;
+    text-align:center;
+}
+
+/* =================
+   Typography 
+   ================= */
+
+h1 {
+    font-weight:300;
+    font-size: 2.25rem;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.3125rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+strong {
+    font-weight: 900;
+}
+
+.intro-top-text,
+.intro-subtitle,
+.main-content-subtitle {
+    color: #F18119;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin:0;
+}
+
+.intro-top-text {
+    font-size: 0.625rem;
+}
+
+.main-content-subtitle {
+    margin-top: 0;
+}
+
+.fine-print {
+    font-size: .625rem;
+    letter-spacing: 1px;
+}
+
+/* =================
+   Intro section 
+   ================= */
+
+.intro {
+    background-color: #404040;
+    background-image: url(https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
+    background-size: cover; 
+    background-position: center;
+    background-blend-mode: multiply;
+    padding: 0 .5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+
+.intro-top-text {
+    order: -1;
+    border-top: 5px solid #F18119;
+    border-image: linear-gradient(to left, #FF713B, #FFA51D) 1;
+    padding-top: 2px;
+}
+
+
+
+/* =================
+Main content
+================= */
+
+.main-content {
+    padding: 2em .5em;
+}
+
+.intro > *,
+    .main-content > * {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+   
+/* =================
+   Form
+   ================= */
+
+.email-collector {
+    width:80%;
+    max-width: 300px;
+}
+
+input,
+button {
+    width:100%;
+    border-radius: 5px;
+}
+
+input {
+    margin-bottom: .75em;
+    padding: .5em;
+    font-family: inherit;
+    text-align: inherit;
+    border: 1px solid #404040;
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1)
+}
+
+.btn {
+    font-size: .625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 0;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to left, #FF713B, #FFA51D);
+    color: white;
+    transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.1)
+}
+
+
+/* =================
+   Media queries
+   ================= */
+
+@media (min-width:500px) {
+    body {
+        font-size: 1.125rem;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .intro,
+    .main-content {
+        width: 50%;
+        min-height: 100vh;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,260 @@
+/* 
+
+colors
+#f18119 yellow
+#000000 black
+#404040 dark grey
+#fff white
+fw 700 & 400
+
+fs  h1 : 48px 3rem
+    h2 : 18px 1.125rem
+    body : 16px 1rem
+    intro 18px 1.125rem
+    buttons & nav 14px 0.875rem */
+
+
+:root {
+    --yellow: #edf119;
+    --black: #000000;
+    --grey: #404040;
+    --white: #fff;
+    --lightgrey: #ebebeb;
+
+    --fw-bold: 700;
+    --fw-regular: 400;
+
+    --fs-title: 2rem;
+    --fs-subtitle: 1.125rem;
+    --fs-body: 1rem;
+    --fs-buttons: .875rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+h1,
+strong {
+    font-weight: var(700);
+}
+
+h1 {
+    font-size: var(--fs-title);
+}
+
+h2 {
+    font-size: var(--fs-subtitle);
+}
+
+/* ==============
+    general layout
+    =============== */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: minmax(2em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-buttons);
+    text-transform: uppercase;
+}
+
+/* ========== 
+    nav 
+    ======= */
+
+.header {
+    background-color: var(--black);
+    
+}
+
+.header-content {
+    grid-column: 2 / -2;
+    display: flex;   
+}
+
+.logo-link {
+    background-color: var(--yellow);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ========== 
+    hero 
+    ======= */
+
+.hero {
+    background-color: var(--grey);
+    color: white;
+    padding: 2em 0;
+    
+}
+
+.accent-color {
+    color: var(--yellow);
+}
+
+.hero > * {
+    grid-column: 2 / -2;
+}
+
+.hero-title,
+.hero-subtitle {
+    width: 80%;
+    max-width: 1100px;
+}
+
+.btn-primary {
+    background-color: var(--yellow);
+    color: var(--black);
+    justify-self: start;
+    padding: .5em 1.7em;
+}
+
+/* ========== 
+    content 
+    ======= */
+
+.content {
+    margin: 3em 0;
+}
+
+.col {
+    grid-column: 2 / -2;
+    text-align: center;
+    margin: 1em auto 0;
+    width: 70%;
+}
+
+/* ========== 
+    footer 
+    ======= */
+
+footer {
+    background-color: var(--lightgrey);
+    grid-template-areas:   
+        ". social ."
+        ". content .";
+    padding: 2em;
+    text-align: center;
+}
+
+.footer-main{
+    grid-area: content;
+    opacity: .4;
+    margin: 1em auto 0;
+    width: 90%;
+}
+
+.social-list{
+    list-style: none;
+    margin: 1em 0 3em;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 2em;
+    justify-content: center;
+    grid-area: social;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.footer-fine-print {
+    font-size: var(--fs-buttons);
+    margin-top: 5em;
+}
+
+/* ============== 
+    media queries 
+    =========== */
+
+@media (min-width: 600px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: minmax(5em, 1fr) repeat(3, minmax(200px, 500px)) minmax(5em, 1fr);
+        grid-gap: 2em;
+    }
+
+    .hero > * {
+        grid-column: 2 / 4;
+    }
+
+    .content {
+        grid-template-areas: 
+        ". col1 col2 col3 .";
+    }
+    .col {
+        text-align: center;
+        margin: 1em auto 0;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .col1 {
+        grid-area: col1;
+    }
+
+    .col2 {
+        grid-area: col2;
+    }
+
+    .col3 {
+        grid-area: col3;
+    }
+
+    footer {
+        background-color: var(--lightgrey);
+        grid-template-areas:   
+            ". content content social .";
+        text-align: left;
+        padding: 0;
+    }   
+    
+    .footer-main{
+        justify-self: start;
+        align-self: end;
+        width: 80%;
+        margin: 2em 0 0;
+    }
+    
+    .social-list{
+        align-self: center;
+    }
+    
+    .social-link {
+        font-size: 2rem;
+        color: var(--black);
+    }
+    
+    .footer-fine-print {
+        font-size: var(--fs-buttons);
+        margin-top: 5em;
+    }
+
+}
