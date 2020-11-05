@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const unsortedArray = ['Joe', 'Michel', 'Zoé', 'Alix', 'Cedric'];
+
+    const selectionSort = (array) => {
+      const arrayLength = array.length;
+      for (let i = 0; i < arrayLength; i++) {
+      let min = i;
+      for (let j = i + 1; j < arrayLength; j++) {
+        if (array[j] < array[min]) {
+          min = j;
+        }
+      }
+      if (min != i) {
+        let temp = array[i];
+        array[i] = array[min];
+        array[min] = temp;
+      }  
+    }
+    return array;
+    }
+    console.log("hello world")
+
+    console.log(selectionSort(unsortedArray));
+  </script>
+</body>
+</html>

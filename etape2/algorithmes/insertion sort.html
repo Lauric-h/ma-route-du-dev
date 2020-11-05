@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    const unsortedArray = [205, 1, 408, 2000, 35, 72, 28];
+
+    const insertionSort = (array) => { 
+    const arrayLength = array.length;
+
+      // i débute à 1, on compare i au premier élément (i - 1);
+      for (let i = 1; i < arrayLength; i++) {
+        let j = i - 1;
+        let temp = array[i];
+
+        // on compare de droite à gauche
+        while (j >= 0 && array[j] > temp) {
+          array[j + 1] = array[j];;
+          j--;
+        }
+        array[j + 1] = temp;
+      }
+      return array;
+    }
+    
+    console.log(insertionSort(unsortedArray));
+    
+
+
+  </script>
+
+</body>
+</html>

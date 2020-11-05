@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <script>
+
+    // on définit le pivot
+    const pivot = (arr, start = 0, end = arr.length + 1) => {
+      // swap réassigne les index 
+      const swap = (list, a, b) => [list[a], list[b]] = [list[b], list[a]];
+
+      // pointer est un placeholder pour le pivot
+      // A chaque fois qu'un tour de boucle est fait, chaque élément est comparé au pivot
+        // si l'élément est plus petit, il est swap avec le pointer.
+      // On fait cela pour s'assurer que le pointer est toujours 
+      // après les éléments plus petits que le pivot 
+      // et avant les éléments plus grands
+      let pivot = arr[start];
+      let pointer = start;
+
+      for (let i = start; i < arr.length; i++) {
+        if (arr[i] < pivot) {
+          pointer++;
+          swap(arr, pointer, i)
+        }
+      };
+      swap(arr, start, pointer);
+
+      return pointer;
+    }
+
+    const quickSort = (arr, start = 0, end = arr.length) => {
+      let pivotIndex = pivot(arr, start, end);
+
+      // base case
+      if (start >= end) return arr;
+      // récursion
+      // On trie la première partie de l'array
+      quickSort(arr, start, pivotIndex);
+      // on trie la deuxième partie de l'array
+      quickSort(arr, pivotIndex + 1, end);
+
+      return arr;
+    };
+
+    const unsortedArray = [20500, 33, 25000, 1200, 3]
+
+    console.log(quickSort(unsortedArray));
+
+
+
+  </script>
+  
+</body>
+</html>

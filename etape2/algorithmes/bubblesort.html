@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const unsortedArray = ['Joe', 'Michel', 'Zoé', 'Alix', 'Cedric'];
+
+const bubbleSort = array => {
+  const arrayLength = array.length;
+  let isSwapped;
+
+  do {
+    isSwapped = false;
+
+    for (let i = 0; i < arrayLength; i++) {
+      if(array[i] > array[i + 1]) {
+        const tempLeftValue = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = tempLeftValue;
+
+        isSwapped = true;
+      }
+    }
+  } while (isSwapped)
+
+  return array;
+}
+
+console.log(bubbleSort(unsortedArray));
+  </script>
+</body>
+</html>
