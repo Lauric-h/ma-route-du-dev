@@ -1,0 +1,185 @@
+/* colors 
+#1B9AAA
+#06D6A0
+#EF476F
+#FFC43D */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+h1, 
+h2,
+.subtitle{
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin: 0;  
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  width: 60%;
+  max-width: 850px;
+  margin: 3em auto;
+  display: grid;
+  grid-gap: 1em;
+}
+
+/* book container */
+.bookContainer {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.bookTable-titles {
+  margin-top: 1em;
+  padding: .325em;
+  background: #1B9AAA;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 25px repeat(2, 1fr) 60px 80px;
+  grid-gap: .75em;
+}
+
+.bookLine {
+  padding: .5em 0;
+  margin-top: .5em;
+  display: grid;
+  grid-template-columns: 25px repeat(2, 1fr) 60px 80px;
+}
+
+.center {
+  justify-self: center;
+}
+
+/* buttons */
+button,
+.addBtn {
+  width: 15%;
+  padding: .5em 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #06D6A0;
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #FFF;
+  transition: all .1s linear;
+}
+
+.delCheckbox {
+  display: none;
+}
+
+.delIcon {
+  cursor: pointer;
+}
+
+.toggleAll {
+  width: 18%;
+  min-width: 50px;
+}
+
+button:active,
+button:hover,
+.addBtn:active,
+.addBtn:hover {
+  transform: translateY(-10%);
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Form container */
+.form-ctn {
+  background: #1B9AAA;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  width: 40%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-gap: 1em;
+  transform: translateY(-200%);
+  transition: all .2s linear;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addBooks {
+  width: 100%;
+  display: grid;
+  grid-gap: 1em;
+}
+
+.bookCategory {
+  display: grid;
+  grid-gap: .5em;
+}
+
+.userInput {
+  padding: .5em;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+}
+
+.readPages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#pages {
+  justify-self: start;
+}
+
+.displayForm {
+  transform: translateY(0);
+}
+
+/* read state */
+.read {
+  background: #EF476F;
+  color: #fff;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
+  text-align: center;
+}
+
+

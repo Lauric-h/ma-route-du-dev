@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Etch a Sketch !</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Etch a sketch!</h1>
+    <button id='reset'>Reset</button>
+    <button id='prompt'>Change size</button>
+  </header>
+
+  <div class="container grid">
+
+
+
+  </div>
+
+  <script>
+    const grid = document.querySelector('.grid');
+    
+    //setting default size of the grid
+    let gridSizeValue = 16;
+    let gridNumber = gridSizeValue * gridSizeValue;
+  
+    // generate divs
+    function createDiv(gridSizeValue) {
+      grid.style.gridTemplateColumns = `repeat(${gridSizeValue}, minmax(50px, 1fr)`;
+      grid.style.gridTemplateRows = `repeat(${gridSizeValue}, minmax(50px, 1fr)`;
+      for (let i = 0; i < gridNumber; i++) {
+        const newDiv = document.createElement('div');
+        grid.appendChild(newDiv);
+        newDiv.classList.add('newDiv');
+      }
+    }
+
+    createDiv(gridSizeValue);
+
+    // finding random color 
+    function randomColor() {
+      return Math.floor((Math.random() * 255) + 1);
+    }
+
+    // changing color on hover
+    function hoverColor() {
+      div = document.querySelectorAll('.newDiv');
+      div.forEach(div => div.addEventListener('mouseover', () => {
+          div.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+        }));
+    }
+
+    hoverColor();
+
+    // reset by clicking on button
+    const resetBtn = document.querySelector('#reset');
+
+    function resetGridColor() {
+      resetBtn.addEventListener('click', () => {
+        div.forEach(div => div.style.backgroundColor = '#fff');
+      });
+    }
+
+    resetGridColor();
+
+    // prompting user for grid size
+    const gridSizeBtn = document.querySelector('#prompt');
+
+    function getGridSize() {
+      do {
+        let sizeGrid = prompt('Enter a value (16 max)');
+        gridSizeValue = parseInt(sizeGrid);
+        console.log(gridSizeValue);
+      } while (gridSizeValue > 16);
+    }
+
+    // resetting grid size to set new value
+    function resetGridSize() {
+      div.forEach(div => div.remove());
+    }
+
+    // event on click to 
+      // prompt user
+      // reset the grid size
+      // create new divs with the new value
+      // put hover again to change color
+    gridSizeBtn.addEventListener('click', () => {
+      getGridSize();
+      resetGridSize();
+      createDiv(gridSizeValue);
+      hoverColor();
+    });
+
+
+  </script>
+</body>
+</html>

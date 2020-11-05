@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 30%;
+  max-width: 500px;
+  margin: 2em auto;
+  padding: 3em;
+  border: 2px solid black;
+  border-radius: 50px 50px 5px 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  background: #26547C;
+}
+
+.display-ctn {
+  border: 1px solid black;
+  text-align: right;
+  margin-bottom: 1em;
+  font-family: 'Space Mono', monospace;
+}
+
+/* layout */
+.container {
+  display: grid;
+  grid-gap: 1em;
+  
+}
+
+.display-ctn {
+  grid-column: 1 / -1;
+}
+
+.btn-ctn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+footer {
+  width: 100%;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+/* ordre des boutons */
+#equalBtn, 
+#decimalBtn,
+#zeroBtn {
+  grid-row: 6;
+}
+
+#oneBtn,
+#twoBtn,
+#threeBtn {
+  grid-row: 5;
+}
+
+#fourBtn,
+#fiveBtn,
+#sixBtn {
+  grid-row: 4;
+}
+
+#equalBtn {
+  grid-column: 3;
+}
+
+#zeroBtn {
+  grid-column: 1;
+}
+
+/* style bouton */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  padding: .85em .5em;
+  text-align: center;
+  font-size: 1.3rem;
+  background: #FFD166;
+  font-family: 'Space Mono', monospace;
+}
+
+.opBtn {
+  background: #EF476F;
+}
+
+button:active,
+button:hover {
+  background: rgba(73, 55, 55, 0.5);
+}
+
+
+/* display container */
+.display-ctn {
+  background: #FCFCFC;
+  border-radius: 20px 20px 5px 5px;
+  padding: 1.5em;
+}
+
+.display-ctn p {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}

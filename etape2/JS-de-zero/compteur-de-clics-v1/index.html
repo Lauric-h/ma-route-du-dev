@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/264c9e1633.js" crossorigin="anonymous"></script>
+  <title>Compteur de clics</title>
+</head>
+<body>
+  <main>
+
+    <h1>Compteur de clics <span><i class="fas fa-mouse-pointer"></i></span></h1>
+
+    <p class="clickCounter">0</p>
+
+    <div class="upperLimit">
+      <p class="upperLimit-title">Limite haute</p>
+      <!-- default value 3 -->
+      <input aria-label="Limite haute" type="number" id="upperLimitCount" class="limit-input" value="3">
+    </div>
+    
+    <div class="lowerLimit">
+      <p class="lowerLimit-title">Limite basse</p>
+      <!-- default value -3 -->
+      <input aria-label="Limite basse" type="number" id="lowerLimitCount" class="limit-input" value="-3">
+    </div>
+
+    <div class="decrement">
+      <button class="decrement-btn">-</button>
+      <input aria-label="Décrémentation" type="number" id="decrementCount" class="decrement-count" value="1">
+    </div>
+
+    <div class="increment">
+      <button class="increment-btn">+</button>
+      <input aria-label="Décrémentation" type="number" id="incrementCount" class="increment-count" value="1">
+    </div>
+
+    <button class="resetBtn">Reset</button>
+
+    <div class="alert-box">
+      <p class="alert-text">Vous avez dépassé la limite</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Coded with <i class="far fa-heart"></i> by Lauric</p>
+  </footer>
+
+  <script>
+
+    let clickCounter = 0;
+    
+    // Functionnalities
+    let clicks = {
+      plusClick: function() {
+        clickCounter += input.incrementValue();
+        console.log('click counter', clickCounter); //rm
+        view.updateClickCounter();
+        input.updateUpperLimit();
+      },
+      minusClick: function() {
+        clickCounter = clickCounter - input.decrementValue();
+        console.log('click counter', clickCounter);
+        view.updateClickCounter()
+        input.updateLowerLimit();
+      },
+      reset: function() {
+        clickCounter = 0;
+        view.updateClickCounter();
+        view.removeAlertBox();
+        displayClickCounter.style.color = '#fff';
+      },
+    }
+
+    // variable DOM
+    const displayClickCounter = document.querySelector('.clickCounter');
+    let upperLimitInput = document.querySelector('#upperLimitCount');
+    let upperLimitCount = upperLimitInput.valueAsNumber;
+    let lowerLimitInput = document.querySelector('#lowerLimitCount');
+    let lowerLimitCount = lowerLimitInput.valueAsNumber;
+
+    // What's displayed on screen
+    let view = {
+      updateClickCounter: function() {
+        displayClickCounter.innerHTML = clickCounter;
+      },
+      displayAlertBox: function() {
+        let alertBox = document.querySelector('.alert-box');
+        alertBox.classList.add('hidden');
+      },
+      removeAlertBox: function() {
+        let alertBox = document.querySelector('.alert-box');
+        alertBox.classList.remove('hidden');
+      },
+      upperLimitAlert: function() {
+        clickCounter = upperLimitCount;
+        this.displayAlertBox();
+        document.querySelector('.alert-text').innerHTML = `Vous avez dépassé la limite haute (${upperLimitCount})`;
+        setTimeout(this.removeAlertBox, 1000);
+        displayClickCounter.innerHTML = clickCounter;
+        displayClickCounter.style.color = 'rgb(235, 67, 67)';
+      },
+      lowerLimitAlert: function() {
+        clickCounter = lowerLimitCount;
+        this.displayAlertBox();
+        document.querySelector('.alert-text').innerHTML = `Vous avez dépassé la limite basse (${lowerLimitCount})`;
+        setTimeout(view.removeAlertBox, 1000);       
+        displayClickCounter.innerHTML = clickCounter;
+        displayClickCounter.style.color = 'rgb(235, 67, 67)';
+      },
+    }
+
+    // Input from user
+    let input = {
+      updateUpperLimit: function() {
+        console.log('upperlimit', upperLimitCount);
+        upperLimitCount = upperLimitInput.valueAsNumber;
+        if (clickCounter > upperLimitCount) {
+          view.upperLimitAlert();
+        } else {
+          displayClickCounter.style.color = '#fff';
+        }
+      },
+      updateLowerLimit: function() {
+        console.log('lowerlimit', lowerLimitCount);
+        lowerLimitCount = lowerLimitInput.valueAsNumber;
+        if (clickCounter < lowerLimitCount) {
+          view.lowerLimitAlert();
+        } else {
+          displayClickCounter.style.color = '#fff';
+        }   
+      },
+      incrementValue: function() {
+        let incrementInputCount = document.querySelector('#incrementCount');
+        let incrementInput = incrementInputCount.valueAsNumber;
+        console.log(incrementInput);
+        return incrementInput;
+      },
+      decrementValue: function() {
+        let decrementInputCount = document.querySelector('#decrementCount');
+        let decrementInput = decrementInputCount.valueAsNumber;
+        console.log(decrementInput);
+        return decrementInput;
+      },
+    }
+   
+    // Event listeners
+
+    let handlers = {
+      incrementCount: function() {
+        const incrementBtn = document.querySelector('.increment-btn');
+        incrementBtn.addEventListener('click', clicks.plusClick);
+      },
+      decrementCount: function() {
+        const decrementBtn = document.querySelector('.decrement-btn');
+        decrementBtn.addEventListener('click', clicks.minusClick);
+      },
+      resetCount: function() {
+        const resetBtn = document.querySelector('.resetBtn');   
+        resetBtn.addEventListener('click', clicks.reset);
+      }
+    }
+
+    // need to call the function to listen to clicks  
+    handlers.incrementCount();
+    handlers.decrementCount();
+    handlers.resetCount();
+ 
+
+  </script>
+</body>
+</html>

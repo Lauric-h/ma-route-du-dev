@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #2E294E;
+    color: #C5D86D;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 3em auto;
+    display: grid;
+    justify-content: center;
+    grid-row-gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+h1 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.playerScore,
+.cpuScore {
+    font-size: 2rem;
+}
+
+.score-utilisateur,
+.score-ordinateur {
+    justify-self: center;
+    text-align: center;
+}
+
+.score-utilisateur {
+    grid-column: 1;
+}
+
+.score-ordinateur {
+    grid-column: 3 / -1;
+}
+
+.reset {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+button {
+    cursor: pointer;
+    justify-self: center;
+    color: #C5D86D;
+    font-family: 'Poppins', sans-serif;
+    background: 0;
+    border: 0;
+    font-size: 3.5rem;
+    transition: all .2s ease;
+}
+
+button:active,
+button:hover {
+    transform: scale(1.2);
+}
+
+.currentPlay {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.playerChoice,
+.cpuChoice {
+    font-size: 3rem;
+}
+
+.alert-container {
+    width: 500px;
+    font-size: 2rem;
+    background-color: rgb(240, 101, 101);
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    left: 32%;
+    top: 25%;
+    transform: translateY(-500px);
+    transition: all .2s ease-in;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.show-result {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}

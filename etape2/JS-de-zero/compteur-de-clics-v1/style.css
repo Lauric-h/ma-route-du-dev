@@ -1,0 +1,189 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: url(/Compteur_de_clics_v1/DSC02281-01.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Recursive', sans-serif;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1,
+.clickCounter {
+  color: #fff;
+  font-size: 3rem;
+  position: relative;
+}
+
+.clickCounter {
+  font-size: 10rem;
+}
+
+span {
+  font-size: 1.5rem;
+  color: black;
+  position: absolute;
+  bottom: -8px;
+  right: 2px;
+}
+
+/* buttons */
+
+.increment,
+.decrement {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(2, 50px);
+  grid-template-columns: 50px;
+}
+
+.decrement-count,
+.increment-count {
+  background: lightblue;
+  font-size: 1.125rem;
+  width: 100%;
+  padding: .5em;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+}
+
+.increment,
+.decrement,
+.resetBtn {
+  background: rgba(0,0,0, .4);
+  border-radius: 5px;
+}
+
+button {
+  margin: 0;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  color: #fff;
+  padding: .5em;
+  font-size: 1.125rem;
+}
+
+.resetBtn {
+  padding: .7em 1.7em;
+  font-size: 2rem;
+}
+
+.increment:active,
+.decrement:active,
+.resetBtn:active,
+.increment:hover,
+.decrement:hover,
+.resetBtn:hover {
+  opacity: .7;
+}
+
+/* input */
+
+.lowerLimit,
+.upperLimit {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+input {
+  background: rgba(0,0,0, .4);
+  border: 0;
+  border-radius: 5px;
+  width: 4em;
+  padding: 1em;
+  color: #fff;
+}
+
+.limit-input {
+  width: 80px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+input:active,
+input:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+/* layout */
+
+main {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 3em;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 3em 1fr 3em;
+  grid-template-rows: auto auto 9rem auto auto;
+  grid-template-areas: 
+    "title title title"
+    ". upper ."
+    "decrement counter increment"
+    ". lower ."
+    ". reset .";
+  justify-items: center;
+  align-items: center;
+}
+
+h1 {grid-area: title}
+.upperLimit {grid-area: upper}
+.decrement {grid-area: decrement}
+.increment {grid-area: increment}
+.clickCounter {grid-area: counter}
+.lowerLimit {grid-area: lower}
+.resetBtn {grid-area: reset}
+
+/* alert box */
+
+.alert-box {
+  position: absolute;
+  background: rgb(235, 67, 67);
+  color: #fff;
+  border-radius: 100px;
+  padding: .75em 1.7em;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px 0 rgba(0,0,0, .4);
+
+}
+
+.hidden {
+  transform: translateY(0);
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  margin-top: 3em;
+  letter-spacing: 3px;
+  padding-bottom: 1em;;
+}
+
+
+

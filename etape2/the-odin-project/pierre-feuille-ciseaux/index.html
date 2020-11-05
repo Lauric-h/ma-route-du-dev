@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre feuille ciseaux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/264c9e1633.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Bienvenue sur le champ de bataille !</h1>
+
+            <div class="alert-container">
+                <p class="alert-text"></p>
+            </div>
+                
+            <div class="score-utilisateur">
+                <h2>Ton score</p>
+                <p class="playerScore">0</p>
+            </div>
+
+            <div class="currentPlay">
+                <p class="playerChoice"><i id="playerChoiceIcon" class="fas"></i></p>
+                <p class="cpuChoice"><i id="cpuChoiceIcon" class="fas"></i></p> 
+            </div>
+
+            <div class="score-ordinateur">
+                <h2>Score de l'adversaire</p>
+                <p class="cpuScore">0</p>
+            </div>
+
+            <button type="button" name="inputArmes" class="armes" id="pierre"><i class="fas fa-hand-rock"></i></button>
+            <button type="button" name="inputArmes" class="armes" id="feuille"><i class="fas fa-hand-paper"></i></button>
+            <button type="button" name="inputArmes" class="armes" id="ciseaux"><i class="fas fa-hand-scissors"></i></button>
+
+            <div class="reset">
+                <button type="button" name="inputeReset" class="reset-btn">Rejouer !</button>
+            </div>
+
+            <div class="alert-container"></div>
+            
+        </div>
+    </main>
+
+
+    <script>
+        
+        // Choix du CPU
+        function computerPlay() {
+            const weaponChoice = ['pierre', 'feuille', 'ciseaux'];
+            let computerChoice = Math.floor(Math.random() * weaponChoice.length);
+            return computerSelection = weaponChoice[computerChoice];
+        }
+
+        // Choix de l'utilisateur
+        const playerChoice = document.querySelector('.playerChoice');  
+        const playerSelectionpierre = document.querySelector('#pierre');
+
+        playerSelectionpierre.addEventListener('click', () => {
+            alertContainer.classList.remove('show-result');
+            playerSelection = 'pierre';
+            computerPlay();
+            playerChoice.querySelector('i').classList.toggle('fas');
+            playerChoice.querySelector('i').classList.toggle('fa-hand-rock'); 
+            playRound(playerSelection, computerSelection);
+            return 'pierre';
+        });
+
+        const playerSelectionfeuille = document.querySelector('#feuille');
+
+        playerSelectionfeuille.addEventListener('click', () => {
+            alertContainer.classList.remove('show-result');
+            playerSelection = 'feuille';
+            computerPlay();
+            playerChoice.querySelector('i').classList.toggle('fas');
+            playerChoice.querySelector('i').classList.toggle('fa-hand-paper'); 
+            playRound(playerSelection, computerSelection);
+            return 'feuille';
+        });
+
+        const playerSelectionciseaux = document.querySelector('#ciseaux');
+
+        playerSelectionciseaux.addEventListener('click', () => {
+            alertContainer.classList.remove('show-result');
+            playerSelection = 'ciseaux';
+            computerPlay();
+            playerChoice.querySelector('i').classList.toggle('fas');
+            playerChoice.querySelector('i').classList.toggle('fa-hand-scissors'); 
+            playRound(playerSelection, computerSelection);
+            return 'ciseaux';
+        });
+
+        // Joue un round
+
+            const weapons = document.querySelectorAll('.armes');
+            const displayResult = document.createElement('p');
+            const alertContainer = document.querySelector('.alert-container');
+
+            const playRound = (playerSelection, computerSelection) => {
+                cpuSelected();
+                if (playerSelection === computerSelection) {
+                    alertContainer.innerHTML = (`Egalité ! :)`);
+                    alertContainer.style.background = 'lightorange';
+                    alertContainer.classList.add('show-result');;
+                }
+                if ((playerSelection === 'pierre' && computerSelection === 'ciseaux') ||
+                    (playerSelection ==='feuille' && computerSelection ==='pierre') ||
+                    (playerSelection === 'ciseaux' && computerSelection === 'feuille')) {
+                        playerScore++;
+                        if (playerScore === 5) {
+                            weapons[0].classList.add('hidden');
+                            weapons[1].classList.add('hidden');
+                            weapons[2].classList.add('hidden');
+                            alertContainer.innerHTML = (`Tu as gagné ${playerScore} à ${cpuScore}`);
+                            alertContainer.style.background = 'lightgreen';
+                            alertContainer.classList.add('show-result');
+                        }
+                    }
+                else if ((playerSelection === 'pierre' && computerSelection === 'feuille') ||
+                    (playerSelection === 'feuille' && computerSelection === 'ciseaux') ||
+                    (playerSelection === 'ciseaux' && computerSelection === 'pierre')) {
+                        cpuScore++;
+                        if (cpuScore === 5) {
+                            weapons[0].classList.add('hidden');
+                            weapons[1].classList.add('hidden');
+                            weapons[2].classList.add('hidden');
+                            alertContainer.innerHTML = (`Tu as perdu ${cpuScore} à ${playerScore}`);
+                            alertContainer.classList.add('show-result');
+                        }
+                    }
+                keepScore();
+            };
+    
+
+        // Afficher ce que l'ordinateur joue
+        const cpuChoice = document.querySelector('.cpuChoice');
+        const cpuSelected = () => {
+            if (computerSelection === 'pierre') {
+                cpuChoice.querySelector('i').classList.add('fas');
+                cpuChoice.querySelector('i').classList.add('fa-hand-rock');
+            }
+            else if (computerSelection === 'feuille') {
+                cpuChoice.querySelector('i').classList.add('fas');
+                cpuChoice.querySelector('i').classList.add('fa-hand-paper');
+            }
+            else if (computerSelection === 'ciseaux') {
+                cpuChoice.querySelector('i').classList.add('fas');
+                cpuChoice.querySelector('i').classList.add('fa-hand-scissors');
+            }
+        };
+
+        // update les scores
+        const displayCpuScore = document.querySelector(".cpuScore");
+        const displayPlayerScore = document.querySelector('.playerScore');
+        let cpuScore = 0;
+        let playerScore = 0;
+
+        const keepScore = () => {
+            displayCpuScore.textContent = cpuScore;
+            displayPlayerScore.textContent = playerScore;
+        }
+
+        // Bouton reset
+        
+        const resetBtn = document.querySelector('.reset-btn');
+
+        resetBtn.addEventListener('click', () => {
+            cpuScore = 0;
+            playerScore = 0;    
+            keepScore();
+            playerChoice.innerHTML = '';
+            cpuChoice.innerHTML = '';
+            weapons[0].classList.remove('hidden');
+            weapons[1].classList.remove('hidden');
+            weapons[2].classList.remove('hidden');
+            displayResult.remove();
+            alertContainer.classList.remove('show-result');
+        });
+
+    </script>
+</body>
+</html>
