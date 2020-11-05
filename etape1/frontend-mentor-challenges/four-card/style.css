@@ -1,0 +1,174 @@
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px; 
+    line-height: 1.6;
+    background-color: hsl(0, 0%, 98%);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+/* ===========
+    typography
+    =========== */
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.tile-body,
+.intro-body,
+.intro-subtitle {
+    font-weight: 200;
+}
+
+footer {
+    font-size: 0.625rem;
+    text-align: center;
+    padding: 1em;
+}
+
+/* ===========
+    layout
+    =========== */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5em 1em;
+}
+
+.intro-subtitle {
+    order: -1;
+}
+
+.ctn-tile {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiles {
+    width: 80%;
+    margin:1em auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px 2px rgba(173, 169, 169, 0.4);
+}
+
+.tile-body {
+    margin: 1em 0 2em;
+}
+
+
+.tile-supervisor {
+    border-top: 5px solid hsl(180, 62%, 55%);
+    min-height: 200px;
+}
+
+.tile-tbuilder {
+    border-top: 5px solid hsl(0, 78%, 62%);
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.tile-karma {
+    border-top: 5px solid hsl(34, 97%, 64%);
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.tile-calculator {
+    border-top: 5px solid hsl(212, 86%, 64%);
+    min-height: 200px;
+}
+
+.tile-img {
+    display: block;
+    float: right;
+}
+
+
+/* ===========
+    media queries 
+    =========== */
+
+@media (min-width: 550px) {
+    .tile-karma,
+    .tile-tbuilder 
+    .tile-supervisor,
+    .tile-calculator {
+        padding: 3em;
+    }
+
+    .container,
+    .intro {
+        width: 70%;
+        max-width: 550px;
+        margin:0 auto;
+    }
+
+
+@media (min-width: 800px) {
+    .ctn-tile {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .tile-supervisor,
+    .tile-calculator {
+        align-self: center;
+        width: 30%;
+        padding: 3em;
+    }
+
+    .tiles-middle {
+        align-self: center;
+        width: 30%;
+    }
+
+    .tile-karma,
+    .tile-tbuilder {
+        width: 100%;
+        padding: 3em;
+        margin-top: 2em;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        max-width:1100px;
+    }
+
+    .intro {
+        width: 30%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+}

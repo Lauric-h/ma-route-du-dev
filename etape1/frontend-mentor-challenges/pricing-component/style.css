@@ -1,0 +1,248 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: hsl(240, 78%, 98%);
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-position: top right, bottom left;
+    background-repeat: no-repeat;
+    color: hsl(233, 13%, 49%);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.card-price{
+    font-size: 4rem;
+    color: hsl(232, 13%, 33%);
+    margin: .5em 0;
+}
+
+.card-price-accent {
+    color :#fff;
+}
+
+/* ========
+    btn
+    =======*/
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: .7em 2em;
+    text-align: center;
+    border-radius: 5px;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;  
+    margin-top: 2em; 
+}
+
+.btn:hover,
+.btn:focus {
+    background: none;
+    color: hsl(237, 63%, 64%);
+    border: 1px solid hsl(233, 13%, 49%);
+}
+
+.btn-accent {
+    background: #fff;
+    color: hsl(237, 63%, 64%);
+    align-self: center;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background: none;
+    color: #fff;
+    border: 1px solid hsl(233, 13%, 49%);
+}
+
+/* ============
+    header
+    ===========*/
+
+header {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+        "title title title"
+        "annually toggle monthly";
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: 1em;
+    align-items: center;
+}
+
+h1 {
+    grid-area: title;
+    text-align: center;
+}
+
+.annually {
+    grid-area: annually;
+    color: hsl(234, 14%, 74%);
+}
+
+.monthly {
+    grid-area: monthly;
+    color: hsl(234, 14%, 74%);
+}
+
+.toggle {
+    grid-area: toggle;
+    align-self: center;
+}
+
+/* ============
+    toggle
+    ===========*/
+
+#switch {
+    height: 0;
+	width: 0;
+	display: none;
+}
+
+label {
+    cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 30px;
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 29px;
+	height: 28px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 50px;
+}
+
+/* ========
+    card
+    =======*/
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, .2);
+}
+
+.card-accent {
+    background: linear-gradient(45deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+}
+
+.card p{
+    position: relative;
+}
+
+.card p::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: hsl(234, 14%, 74%);;
+}
+
+
+/* ============
+    card layout
+    ===========*/
+
+
+.card-ctn {
+    width: 90%;
+    max-width: 1000px;
+    margin: 1em auto 3em;
+    display: grid;
+    grid-gap: 2em;
+}
+
+.card {
+    padding: 2em 1em;
+    display: grid;
+    
+    justify-content: center;
+    text-align: center;
+} 
+
+
+@media (min-width: 600px) {
+    .card-ctn {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1em auto auto;
+        grid-gap: 0;
+    }
+
+    .card {
+        grid-row: 2 / 3;
+    }
+
+    .card-accent {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    .card:last-of-type {
+        grid-column: 1 / 2;
+        grid-row: 3 / -1;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .card-ctn {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1em auto 1em;
+        grid-gap: 0;
+    }
+
+    .card,
+    .card:last-of-type  {
+        grid-row: 2 / 3;
+    }
+
+    .card-accent {
+        grid-row: 1 / -1;
+    }
+}

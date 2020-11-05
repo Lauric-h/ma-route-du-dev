@@ -1,0 +1,333 @@
+/* ### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+
+- Weights: 300, 400, 600 */
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: hsl(0, 93%, 68%);
+}
+
+h1,
+p {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: 10px;
+    line-height: 1.1;
+}
+
+span {
+    font-weight: 700;  
+    color: black; 
+}
+
+.logo {
+    width: 100px;
+}
+
+.container {
+    background-color: hsl(0, 100%, 98%);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ========
+    layout
+========== */
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2em 1fr 2em;
+    grid-template-rows: 3em repeat(3, auto) 1fr;
+    grid-template-areas:
+        ".      header ."
+        "img    img    img"
+        ".      text  ."
+        ".      email  ."
+        ".      .      .";
+    grid-gap: 1em;
+}
+
+.logo {
+    grid-area: header;
+    align-self: center;
+    margin-top: .5em;
+}
+
+.hero-small {
+    visibility: visible;
+    grid-area: img;
+    width: 100%;
+    height: 100%;    
+}
+
+.hero-big {
+    visibility: hidden;
+}
+
+.text {
+    grid-area: text;
+    margin-top: 2em;
+}
+
+.title {
+    margin-bottom: 1em;
+}
+
+.form {
+    grid-area: email;
+    margin-top: 1em;
+    justify-self: center;
+    display: flex;
+}
+
+label {
+    border: 1px solid hsl(0, 74%, 74%);
+    border-radius: 10em;
+    width: 300px;
+    height: 40px;
+    background-color: hsl(0, 100%, 98%);
+    color: hsl(0, 93%, 68%);
+    opacity: .7;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    padding: .5em 1em;
+    width: 300px;
+    height: 40px;
+    border: none;
+    opacity: .7;
+    background-color: hsl(0, 100%, 98%);
+    color: hsl(0, 93%, 68%);
+}
+
+
+.btn {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 20px;
+    height: 41px;
+    width: 51px;
+    text-align: center;
+    padding: .7em;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 100px repeat(2, auto);
+        grid-template-areas:
+            ".      header ."
+            "img    img  img"
+            ".      text   ."
+            ".      email  ."
+            ".      .      .";
+        grid-gap: 1em;
+        padding-bottom: 2em;
+    }
+
+    h1,
+    p {
+        text-align: left;
+    }
+
+    .text,
+    .form {
+        justify-self: start;
+    }
+
+    .text {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 6rem;
+        margin: 0;
+    }
+}
+
+@media (min-width: 800px) {
+
+    .hero-big {
+        visibility: visible;
+        grid-area: img;
+        width: 100%;
+        height: 100%;    
+    }
+
+    .hero-small {
+        visibility: hidden;
+    }
+
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2em 2fr 3fr;
+        grid-template-rows: 100px repeat(2, auto);
+        grid-template-areas:
+            ".      header img"
+            ".      text   img"
+            ".      email  img";
+        grid-gap: 1em;
+        padding-bottom: 0;
+    }
+
+    h1,
+    p {
+        text-align: left;
+    }
+
+    .text,
+    .form {
+        justify-self: start;
+    }
+
+    .text {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .body {
+        width: 65%;
+        font-size: 1.125rem;
+        margin-top: 1em;
+    }
+
+    label {
+        width: 300px;
+        height: 50px;
+    }
+
+    .btn {
+        height: 50px;
+        padding: 1em;
+    }
+
+    input {
+        height: 50px;
+    }
+}
+
+@media (min-width: 1150px) {
+
+    .hero-big {
+        visibility: visible;
+        grid-area: img;
+        width: 100%;
+        height: 100%;    
+    }
+
+    .hero-small {
+        visibility: hidden;
+    }
+
+    .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr 2fr;
+        grid-template-rows: 100px repeat(2, auto);
+        grid-template-areas:
+            ".      header img"
+            ".      text   img"
+            ".      email  img";
+        grid-gap: 1em;
+    }
+
+    h1,
+    p {
+        text-align: left;
+    }
+
+    .text,
+    .form {
+        justify-self: start;
+    }
+
+    .text {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 6rem;
+        margin: 0;
+    }
+
+    .body {
+        width: 65%;
+        font-size: 1.125rem;
+        margin-top: 1em;
+    }
+
+    label {
+        width: 500px;
+        height: 50px;
+    }
+
+    .btn {
+        border-radius: 30px;
+        height: 50px;
+        width: 80px;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    input {
+        padding: 1em 1.5em;
+        width: 500px;
+        height: 50px;
+    }
+}
