@@ -1,0 +1,147 @@
+/* colors 
+#F3EED9 hero + h2 3 et 4e volet
+#824936 4e volet + h2 2e volet + h1
+#222C2A 3e volet
+*/
+
+/*fonts */
+/* 
+Roboto Light  font-size: 18px; -- le ::before du title
+Playfair Display Black  font-size: 60px; h1
+Playfair Display Black  font-size: 36px; h2
+Roboto Regular  font-size: 21px; paragraphes 
+
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Playfair Display', serif;
+
+
+*/
+
+/* layout */
+/* maximum width of a “container” 
+is 1128px
+
+in the cery first section try setting a min-height  
+of 660px and using what we’ve covered in 
+flexbox to center the content vertically */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --color-light:#F3EED9;
+    --color-dark:#824936;
+    --color-darker:#222C2A;
+
+    --fs-small:18px;
+    --fs-title:60px;
+    --fs-secondary:36px;
+    --fs-p:21px;
+}
+
+body{
+    margin:0;
+}
+
+h1{
+    font-size: var(--fs-title);
+    color:var(--color-dark);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight:900;
+}
+
+h2 {
+    font-size:var(--fs-secondary);
+    font-family: 'Playfair Display', serif;
+    font-weight:900;
+}
+
+p{
+    font-size:var(--fs-p);
+    font-family: 'Roboto', sans-serif;
+}
+
+.colored{
+    width:100%;
+}
+
+.container{
+    width:80%;
+    max-width: 1128px;
+    margin:0 auto;
+    padding:5em 3em;
+}
+
+.row{
+    display:flex;
+
+}
+
+.darker{
+    background-color:var(--color-darker);
+}
+
+.dark{
+    background-color: var(--color-dark);
+}
+
+.hero{
+    background-color: var(--color-light);
+    min-height: 660px;
+    display:flex;
+    align-items: center;
+}
+
+.hero_ctn {
+    width:60%
+}
+
+.hero_title::before {
+    content:'lorem ipsum sit';
+    display:block;
+    color:var(--color-dark);
+    font-size:var(--fs-small);
+    letter-spacing:3px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+}
+
+.first_part_title {
+    text-align: center;
+    color:var(--color-dark);
+    text-align: center;
+}
+
+.ctn_title{
+    color:var(--color-light);
+}
+
+.row_left,
+.row_right {
+    width:50%;
+}
+
+.row_left {
+    margin-right:3em;
+}
+
+.ctn_text {
+    color:#fff;
+}
+
+img{
+    max-width: 100%;;
+}
+
+@media (max-width:675px) {
+    .row {
+        flex-direction : column;
+    }
+}
