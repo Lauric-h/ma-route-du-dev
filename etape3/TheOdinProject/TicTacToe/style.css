@@ -1,0 +1,14 @@
+*::before,
+*::after,
+*, {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.boardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
