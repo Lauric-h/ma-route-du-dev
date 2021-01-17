@@ -35,6 +35,7 @@ function placeMarker() {
   })
 }
 
+
 function checkForWin(array) {
   const victory = [
     // lines
