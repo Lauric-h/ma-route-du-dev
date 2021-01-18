@@ -4,7 +4,7 @@
 
 * Découverte de HTML/CSS
 * Objectif : être à l'aise avec HTML et surtout CSS : Flexbox, Grid, Responsive
-* Défi #100DaysOfCode avec publications sur Twitter @LauricOlrik
+* Défi #100DaysOfCode avec publications sur Twitter [@LauricOlrik](https://twitter.com/LauricOlrik)
 
 
 ## Formations suivies :
