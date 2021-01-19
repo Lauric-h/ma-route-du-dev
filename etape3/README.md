@@ -1,4 +1,4 @@
-# Etape 3 : formation Campus Numérique et outils
+# Etape 3 : début de formation Campus Numérique 
 
 ## Du 30/11/2020 au 31/05/2021 - en cours -
 * Utiliser de façon avancée les outils : Linux, terminal, VSCode, Git/Github
