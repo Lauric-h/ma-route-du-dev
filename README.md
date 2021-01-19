@@ -1,26 +1,33 @@
-Ma route du dev 
+# Ma route du dev
+Mon suivi d'apprentissage pendant ma reconversion professionnelle pour devenir développeur web.
+Découpé en plusieurs étapes selon les apprentissages : 
+* [Étape 1 . HTML, CSS, JavaScript en autodidacte](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape1)
+* [Étape 2 : JavaScript, programmation, algorithmique en autodidacte](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape2)
+* [Étape 3 : Pratique en autodidacte et début d'une formation de 18 mois au Campus Numérique d'Annecy](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape3)
 
-Mon parcours de formation en autodidacte (pour l'instant), depuis avril 2020.
-Découpé en étapes, je publie ici tous mes petits projets effectués par moi-même ou en suivant des tutoriels. 
+## Suivi d'apprentissage, veille et fiches
+* Veille => [ici](https://www.notion.so/Veille-7dc7d5956836420e8a976f63726da48dhttps://www.notion.so/Suivi-d-apprentissage-1e0863391d8c4bd1a11c70eb47278893)
+* Suivi => [lá](https://www.notion.so/Suivi-d-apprentissage-1e0863391d8c4bd1a11c70eb47278893)
+* Fiches => [par lá](https://www.notion.so/680fa162df2a4704a90b00e911441029?v=aec95dc7de5143c2b21a248507d933ac)
 
-Le but est ici de rendre public mon apprentissage pour m'améliorer, peut-être servir à d'autres, et simplement pour moi et pour mesurer mes progrès.
-Plus d'infos sur les principes et bénéfices de Learn In Public (LIP) 
-https://www.swyx.io/learn-in-public/
+## Objectifs
+* Devenir développeur
+* Etre á l'aise avec la syntaxe d'un langage
+* Maitriser les concepts de programmation
+* Apprendre les bonnes pratiques
+* Connaitre les paradigmes de programmation
+* Etre á l'aise avec l'algorithmique et les structures de données
 
-Je publie aussi un AJA par jour :
-voir ici
+## Langages et outils utilisés
+* HTML
+* CSS
+* JavaScript
+* C
+* Python
+* SQL
+* VSCode
+* Linux
 
-Les étapes : 
-- Etape 1 : HTML et CSS
-Mon entrée dans le monde incroyable et immense du développement web
-
-- Etape 2 : JavaScript 
-Mes premiers pas dans la programmation, et premières prises de tête
-
-- Etape 3 : Algorithmes et Data Structures (en cours)
-Approfondissement de JS, de l'algorithmique et des Data Structures
-
-Conjointement, je publie le blog La Route du Dev où je détaille les étapes de mon apprentissage.
 
 
 
