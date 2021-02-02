@@ -16,7 +16,7 @@ Découpé en plusieurs étapes selon les apprentissages :
 * Maitriser les concepts de programmation
 * Apprendre les bonnes pratiques
 * Connaitre les paradigmes de programmation
-* Etre á l'aise avec l'algorithmique et les structures de données
+* Etre à l'aise avec l'algorithmique et les structures de données
 
 ## Langages et outils utilisés
 * HTML
