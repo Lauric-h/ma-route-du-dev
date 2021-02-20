@@ -28,6 +28,6 @@
 * Réalisation d'un site entreprise en groupe : HTML, CSS
 * Maquettes de CV et de site entreprise en groupe : Figma
 * Réalisation d'une landing page pour ma recherche d'alternance
-  * [le repo] (https://github.com/Lauric-h/portfolio)
+  * [le repo](https://github.com/Lauric-h/portfolio)
   * [la page](https://lauric.netlify.app/) 
 
