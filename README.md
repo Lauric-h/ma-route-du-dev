@@ -27,6 +27,7 @@ Découpé en plusieurs étapes selon les apprentissages :
 * SQL
 * VSCode
 * Linux
+* PHP
 
 
 
