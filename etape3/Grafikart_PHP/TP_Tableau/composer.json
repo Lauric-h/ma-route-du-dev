@@ -1,0 +1,12 @@
+{
+    "name": "lauric/tp_tableau",
+    "authors": [
+        {
+            "name": "lauric-h",
+            "email": "h.lauric@outlook.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^5.2"
+    }
+}
