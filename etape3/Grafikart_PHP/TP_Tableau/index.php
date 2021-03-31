@@ -1,6 +1,10 @@
 <?php 
-
+use App\URLHelper;
 use App\NumberHelper;
+use App\TableHelper;
+
+define('PER_PAGE', 20);
+
 require 'vendor/autoload.php';
 $pdo = new PDO("sqlite:./products.db", null, null, [
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -10,17 +14,41 @@ $pdo = new PDO("sqlite:./products.db", null, null, [
 
 
 $query = "SELECT * FROM products";
+$queryCount = "SELECT COUNT(id) as count FROM products";
 $params = [];
+$sortable = [ 'id', 'name', 'city', 'price', 'address'];
 
 if (!empty($_GET['q'])) {
   $query .= " WHERE city LIKE :city";
+  $queryCount .= " WHERE city LIKE :city";
+  
   $params['city'] = '%' . $_GET['q'] . '%';
 }
 
-$query .= " LIMIT 20";
+// sorting
+if (!empty($_GET['sort']) && in_array($_GET['sort'], $sortable)) {
+  $direction = $_GET['dir'] ?? 'asc';
+  if (!in_array($direction, ['asc', 'desc'])) {
+    $direction = 'asc';
+  }
+  $query .= " ORDER BY " . $_GET['sort'] . " $direction";
+}
+
+// pagination
+$page = (int)($_GET['p'] ?? 1);
+$offset = ($page - 1) * PER_PAGE;
+
+$query .= " LIMIT " . PER_PAGE . " OFFSET $offset";
+
 $statement = $pdo->prepare($query);
 $statement->execute($params);
 $products = $statement->fetchAll();
+
+$statement = $pdo->prepare($queryCount);
+$statement->execute($params);
+$count = (int)$statement->fetch()['count'];
+$pages = ceil($count / PER_PAGE);
+
  
 ?>
 
@@ -48,11 +76,11 @@ $products = $statement->fetchAll();
   <table class="table table-striped">
     <thead>
       <tr> 
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prix</th>
-        <th>Ville</th>
-        <th>Adresse</th>
+        <th><?= TableHelper::sort('id', 'ID', $_GET) ?></th>
+        <th><?= TableHelper::sort('name', 'NOM', $_GET) ?></th>
+        <th><?= TableHelper::sort('price', 'PRIX', $_GET) ?></th>
+        <th><?= TableHelper::sort('city', 'VILLE', $_GET) ?></th>
+        <th><?= TableHelper::sort('address', 'ADRESSE', $_GET) ?></th>
       </tr>
     </thead>
     <tbody>
@@ -67,7 +95,13 @@ $products = $statement->fetchAll();
     <?php endforeach ?>
     </tbody>
   </table>
-  
+
+  <?php if ($pages > 1 && $page > 1): ?>
+    <a href="?<?= URLHelper::withParam($_GET, 'p', $page - 1) ?>" class="btn btn-primary">Page précédente</a>
+  <?php endif ?>
+  <?php if ($pages > 1 && $page < $pages): ?>
+    <a href="?<?= URLHelper::withParam($_GET, 'p', $page + 1) ?>" class="btn btn-primary">Page suivante</a>
+  <?php endif ?>
 
 </body>
 </html>
