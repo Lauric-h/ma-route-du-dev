@@ -15,7 +15,7 @@ if (!empty($_POST)) {
   $user = $auth->login($_POST['username'], $_POST['password']);
   
   if ($user) {
-    header:('Location: index.php?login=1');
+    header('Location: index.php?login=1');
     exit();
   }
   $error = true;
