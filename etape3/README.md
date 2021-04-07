@@ -21,6 +21,7 @@
 * [Command-line power user - Wes Bos](https://commandlinepoweruser.com/)
 * [The Missing Semester of your CS Education - MIT](https://missing.csail.mit.edu/)
 * [Discrete Mathematics - P.Lovasz, MIT](http://www.cs.elte.hu/~lovasz/dmbook.ps)
+* [VueJS Crash Course - Traversy Media](https://www.youtube.com/watch?v=qZXt1Aom3Cs)
 
 ## Réalisations :
 * Implémentation d'algorithmes
