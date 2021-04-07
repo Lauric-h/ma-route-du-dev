@@ -31,4 +31,7 @@
 * Réalisation d'une landing page pour ma recherche d'alternance
   * [le repo](https://github.com/Lauric-h/portfolio)
   * [la page](https://lauric.netlify.app/) 
+ * Réalisation d'un site de recherche de stats de joueurs NBA et dashboard
+   * [le repo](https://github.com/Lauric-h/nbaplayerstats)
+   * [la page](https://lauric.app) 
 
