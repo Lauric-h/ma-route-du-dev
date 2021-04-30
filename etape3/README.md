@@ -38,5 +38,5 @@
    * [le repo](https://github.com/Lauric-h/reading-list)
    * [la page](https://books.lauric.app) 
  * Création d'un blog de voyage sur Ghost CMS (avec quelques customs)
-  * [la page](https://blog.lauric.app) 
+   * [la page](https://blog.lauric.app) 
 
