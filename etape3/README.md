@@ -1,6 +1,6 @@
 # Etape 3 : début de formation Campus Numérique 
 
-## Du 30/11/2020 au 31/05/2021 - en cours -
+## Du 30/11/2020 au 31/05/2021
 * Utiliser de façon avancée les outils : Linux, terminal, VSCode, Git/Github
 * Continuer les cours commencés
 * Pratiquer l'algorithmique (LeetCode, HackerRank)
@@ -43,3 +43,20 @@
  * Création d'un blog de voyage sur Ghost CMS (avec quelques customs)
    * [la page](https://blog.lauric.app) 
 
+## Apprentissages :
+* Maquettage et wireframing / Figma
+* Systèmes et réseaux
+* Exercices d'algorithmique
+* Travail en équipe sur Git
+* PHP
+* Programmation Orientée Objet
+* Modèle MVC
+* Utilisation de frameworks PHP (Laravel & Symfony)
+* Utilisation de VueJS (v2 et v3) et création de SPA
+* Gestion de projet Agile
+* Découverte JQuery 
+* Java et utilisation de framework Jave (Spring Boot)
+* Bases de données : SQLite, GraphQL, MySQL
+* Découvertes outils JAMstack
+* Outils : terminal, Linux, Postman
+* Création et utilisation d'API REST
