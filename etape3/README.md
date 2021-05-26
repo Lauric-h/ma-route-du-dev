@@ -28,6 +28,9 @@
 * Exercices d'algorithmiques : HackerRank, démineur, jeu de l'oie
 * Réalisation d'un site entreprise en groupe : HTML, CSS
 * Maquettes de CV et de site entreprise en groupe : Figma
+* Jeu Dongeons et Dragons en Java
+* Utilisation d'API et Web App en VueJS
+* Création d'un site e-commerce : Laravel
 * Réalisation d'une landing page pour ma recherche d'alternance
   * [le repo](https://github.com/Lauric-h/portfolio)
   * [la page](https://lauric.app/) 
