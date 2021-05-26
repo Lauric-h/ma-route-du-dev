@@ -13,15 +13,15 @@
 * Trouver une alternance
 
 ## Formations suivies :
-* [Formation Développeur Web - Campus Numérique in the Alps](https://le-campus-numerique.fr/formation-developpeur/)
-* [Harvard's Introduction to Computer Science : CS50](https://cs50.harvard.edu/college/2020/fall/)
+* [Formation Développeur Web - Campus Numérique in the Alps](https://le-campus-numerique.fr/formation-developpeur/) 
+* [Harvard's Introduction to Computer Science : CS50](https://cs50.harvard.edu/college/2020/fall/) ✅
 * [JavaScript de Zéro : module intermédiaire - Jérémy Mouzin](https://www.javascriptdezero.com/module-intermediaire)
 * [The Odin Project : JavaScript](https://www.theodinproject.com/courses/javascript)
-* [VSCode Crash Course - freeCodeCamp](https://www.youtube.com/watch?v=WPqXP_kLzpo)
-* [Command-line power user - Wes Bos](https://commandlinepoweruser.com/)
+* [VSCode Crash Course - freeCodeCamp](https://www.youtube.com/watch?v=WPqXP_kLzpo) ✅
+* [Command-line power user - Wes Bos](https://commandlinepoweruser.com/) ✅
 * [The Missing Semester of your CS Education - MIT](https://missing.csail.mit.edu/)
 * [Discrete Mathematics - P.Lovasz, MIT](http://www.cs.elte.hu/~lovasz/dmbook.ps)
-* [VueJS Crash Course - Traversy Media](https://www.youtube.com/watch?v=qZXt1Aom3Cs)
+* [VueJS Crash Course - Traversy Media](https://www.youtube.com/watch?v=qZXt1Aom3Cs) ✅
 
 ## Réalisations :
 * Implémentation d'algorithmes
