@@ -4,6 +4,7 @@ Découpé en plusieurs étapes selon les apprentissages :
 * [Étape 1 . HTML, CSS, JavaScript en autodidacte](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape1)
 * [Étape 2 : JavaScript, programmation, algorithmique en autodidacte](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape2)
 * [Étape 3 : Pratique en autodidacte et début d'une formation de 18 mois au Campus Numérique d'Annecy](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape3)
+* [Étape 4 : Alternance et computer science](https://github.com/Lauric-h/ma-route-du-dev/tree/main/etape4)
 
 ## Suivi d'apprentissage, veille et fiches
 * Veille => [ici](https://www.notion.so/Veille-7dc7d5956836420e8a976f63726da48d)
@@ -28,6 +29,8 @@ Découpé en plusieurs étapes selon les apprentissages :
 * VSCode
 * Linux
 * PHP
+* Intellij Idea
+* Java
 
 
 
