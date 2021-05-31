@@ -1,4 +1,4 @@
-#Etape 4 : alternance et computer science
+# Etape 4 : alternance et computer science
 
 ## Du 01/06/2021 au - en cours -
 
